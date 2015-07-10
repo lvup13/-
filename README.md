@@ -26,13 +26,13 @@
 - 更新基金订单
     - 获取订单list 状态为0，2，3 
     - 计算昨日收益 份额乘以净值差
-    - game_order 修改cost, earning
-    - game_accountdetailfund  create
-    - game_user 修改capital_sum
+    - game_order `cost, earning`
+    - game_accountdetailfund  `create`
+    - game_user `capital_sum`
     - game_accountdetailcapital
     - 更新已经卖出的订单收益
 - 更新订单状态
-    - 获取订单记录list triggerDay == date.today()
+    - 获取订单记录列表 `triggerDay == date.today()`
     - game_orderrecord `triggerDay(=(2000,1,1))`
     - game_acebankuser `capital_sum`
     - game_order `cost, yestEarning, earning`
