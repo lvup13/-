@@ -33,13 +33,13 @@
     - 更新已经卖出的订单收益
 - 更新订单状态
     - 获取订单记录list triggerDay == date.today()
-    - game_orderrecord 修改triggerDay
-    - game_acebankuser 修改capital_sum
-    - game_order cost, yestEarning, earning
-    - game_orderrecord amount(-trading_fee) create(BUY_FEE)
-    - game_order shares(+add_shares)  !!status
+    - game_orderrecord `triggerDay(=(2000,1,1))`
+    - game_acebankuser `capital_sum`
+    - game_order `cost, yestEarning, earning`
+    - game_orderrecord `amount(-trading_fee) create(BUY_FEE)`
+    - game_order `shares(+add_shares)  !!status`
     - game_accountdetailfund
     - game_addtransactionmessage
-    - game_order cost, yestEarning, earning
+    - game_order `cost, yestEarning, earning`
     - game_accountdetailfund
     - game_acebankuser
