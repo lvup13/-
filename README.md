@@ -4,4 +4,4 @@
 
 - [scope](#scope) 
 
-###confLogger
+###配置日志文件
