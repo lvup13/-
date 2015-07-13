@@ -43,6 +43,8 @@
     - game_order `cost, yestEarning, earning` 这里把差价加到昨日收益里面
     - game_accountdetailfund
     - game_acebankuser
+
+
 ####买入操作
 - 基金 参数：产品类型，产品ID， 用户ID， 交易数量
   - 获取买入的产品，并储存到data中
