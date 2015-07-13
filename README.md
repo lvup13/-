@@ -35,11 +35,23 @@
     - 获取订单记录列表 `triggerDay == date.today()`
     - game_orderrecord `triggerDay(=(2000,1,1))`
     - game_acebankuser `capital_sum`
-    - game_order `cost, yestEarning, earning`
+    - game_order `cost, yestEarning, earning` 这里先昨日收益先减去买入基金的手续费
     - game_orderrecord `amount(-trading_fee) create(BUY_FEE)`
     - game_order `shares(+add_shares)  !!status`
     - game_accountdetailfund
     - game_addtransactionmessage
-    - game_order `cost, yestEarning, earning`
+    - game_order `cost, yestEarning, earning` 这里把差价加到昨日收益里面
     - game_accountdetailfund
     - game_acebankuser
+####买入操作
+- 基金 参数：产品类型，产品ID， 用户ID， 交易数量
+  - 获取买入的产品，并储存到data中
+  - 检查合法性（只与银行有关）
+  - 生成订单
+    - 如果已经有该类订单（除去状态为已经卖出的），则更新订单状态和订单更新时间，修改cost，并保存。
+    - 如果没有，则生成改订单，这里cost和capital都设置为交易数量
+  - 修改用户信息 修改cash
+  - 创建账户详细买入基金的信息 产品从产品表中获取
+  - 增加积分，发送信息（创建新的信息条目）
+- 互联网产品 具体步骤类似于基金 需要注意每日收益和七日年化收益
+- 银行产品 注意预期收益
